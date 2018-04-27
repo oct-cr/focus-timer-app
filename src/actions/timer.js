@@ -6,16 +6,12 @@ export const actionTypes = {
 
 
 export const start = remainingSeconds => dispatch => {
-  const timerId = setInterval(
-    () =>
-      dispatch({
-        type: actionTypes.TIMER_TICK
-      })
-    , 1000)
-
   dispatch({
     type: actionTypes.TIMER_START,
-    timerId,
+    callback: () =>
+      dispatch({
+        type: actionTypes.TIMER_TICK
+      }),
     remainingSeconds
   })
 }

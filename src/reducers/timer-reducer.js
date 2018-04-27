@@ -10,15 +10,24 @@ const initialState = {
 export function timerReducer(state = initialState, action) {
 
   switch (action.type) {
+
     case actionTypes.TIMER_START:
+      clearInterval(state.timerId)
+
+      const timerId = setInterval(action.callback, 1000)
+
       return {
         ...state,
         remainingSeconds: action.remainingSeconds,
-        timerId: action.timerId
+        timerId
       }
+
+
     case actionTypes.TIMER_STOP:
       clearInterval(state.timerId)
       return initialState
+
+
     case actionTypes.TIMER_TICK:
       const remainingSeconds = state.remainingSeconds - 1
 
@@ -31,8 +40,11 @@ export function timerReducer(state = initialState, action) {
 
       clearInterval(state.timerId)
       return initialState
+
+
     default:
       return state
+
   }
 
 }
