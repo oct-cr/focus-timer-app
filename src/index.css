@@ -1,23 +1,30 @@
-html,
-body {
+html, body, #root {
   height: 100%;
 }
 
 body {
-  background: rgba(255, 0, 255, .5);
   font-family: sans-serif;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-#root {
+#main-wrapper {  
   align-items: center;
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
+  transition: background-color .225s cubic-bezier(.4, 0, 1, 1);
   width: 100%;
+}
+
+.stopped {
+  background: rgba(255, 0, 255, .5);  
+}
+
+.running {
+  background: rgba(0, 255, 255, .5);    
 }
 
 main {

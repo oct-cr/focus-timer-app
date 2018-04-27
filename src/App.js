@@ -1,16 +1,28 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import { Dashboard } from './containers'
 
 
-export default class App extends React.Component {
+export class App extends React.Component {
 
   render() {
+    const statusClass = (this.props.seconds === 0) ? 'stopped' : 'running'
+
     return (
-      <main>
-        <Dashboard />
-      </main>
+      <div id="main-wrapper" className={statusClass}>
+        <main>
+          <Dashboard />
+        </main>
+      </div>
     )
   }
 
 }
+
+
+const mapStateToProps = state => ({
+  seconds: state.timer.remainingSeconds
+})
+
+App = connect(mapStateToProps)(App)
