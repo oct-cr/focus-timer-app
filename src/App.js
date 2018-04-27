@@ -7,10 +7,9 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1>Focus Timer</h1>
+      <main>
         <Dashboard />
-      </React.Fragment>
+      </main>
     )
   }
 

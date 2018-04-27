@@ -28,7 +28,7 @@ export class Dashboard extends React.Component {
 
 
   render() {
-    return <div>
+    return <React.Fragment>
       <TimerDisplay seconds={this.props.seconds} />
 
       <button onClick={this.startTimer}>
@@ -38,7 +38,7 @@ export class Dashboard extends React.Component {
       <button onClick={this.stopTimer}>
         Stop
       </button>
-    </div>
+    </React.Fragment>
   }
 
 }
