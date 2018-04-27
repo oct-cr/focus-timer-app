@@ -18,7 +18,7 @@ export class Dashboard extends React.Component {
 
 
   startTimer() {
-    this.props.start(2)
+    this.props.start(25 * 60)
   }
 
 
