@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import Typography from 'material-ui/Typography'
 
-
+/** Displays ```seconds``` using mm:ss format */
 export const TimerDisplay = props => {
   const minutes = Math.floor(props.seconds / 60)
   const seconds = props.seconds % 60
@@ -19,5 +19,6 @@ export const TimerDisplay = props => {
 }
 
 TimerDisplay.propTypes = {
+  /** seconds to display */
   seconds: PropTypes.number.isRequired
 }

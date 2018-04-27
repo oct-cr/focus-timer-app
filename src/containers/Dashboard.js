@@ -9,7 +9,7 @@ import { start, stop } from '../actions/timer'
 
 import { TimerDisplay } from '../components'
 
-
+/** Timer and its controls */
 export class Dashboard extends React.Component {
 
   constructor(props) {
