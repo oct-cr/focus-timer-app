@@ -1,7 +1,10 @@
 import React from 'react'
-
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+import Button from 'material-ui/Button'
+
+
 import { start, stop } from '../actions/timer'
 
 import { TimerDisplay } from '../components'
@@ -31,13 +34,13 @@ export class Dashboard extends React.Component {
     return <React.Fragment>
       <TimerDisplay seconds={this.props.seconds} />
 
-      <button onClick={this.startTimer}>
+      <Button onClick={this.startTimer} variant="raised" color="primary">
         Focus
-      </button>
+      </Button>
 
-      <button onClick={this.stopTimer}>
+      <Button onClick={this.stopTimer} variant="raised" color="secondary">
         Stop
-      </button>
+      </Button>
     </React.Fragment>
   }
 
