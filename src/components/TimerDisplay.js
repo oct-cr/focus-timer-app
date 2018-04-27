@@ -11,7 +11,7 @@ export const TimerDisplay = props => {
   const time = getFormattedTime(props.seconds)
 
   return (
-    <Typography variant="display4" gutterBottom>
+    <Typography variant="display4">
       {time}
     </Typography>
   )

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import Button from 'material-ui/Button'
+import Collapse from 'material-ui/transitions/Collapse';
 
 
 import { start, stop } from '../actions/timer'
@@ -15,13 +16,19 @@ export class Dashboard extends React.Component {
   constructor(props) {
     super(props)
 
-    this.startTimer = this.startTimer.bind(this)
+    this.startFocus = this.startFocus.bind(this)
+    this.startBreak = this.startBreak.bind(this)
     this.stopTimer = this.stopTimer.bind(this)
   }
 
 
-  startTimer() {
+  startFocus() {
     this.props.start(25 * 60)
+  }
+
+
+  startBreak() {
+    this.props.start(5 * 60)
   }
 
 
@@ -31,16 +38,26 @@ export class Dashboard extends React.Component {
 
 
   render() {
+    const isRunning = this.props.seconds > 0
+
     return <React.Fragment>
       <TimerDisplay seconds={this.props.seconds} />
 
-      <Button onClick={this.startTimer} variant="raised" color="primary">
-        Focus
-      </Button>
+      <Collapse in={isRunning}>
+        <Button onClick={this.stopTimer} variant="raised" color="secondary">
+          Stop
+        </Button>
+      </Collapse>
 
-      <Button onClick={this.stopTimer} variant="raised" color="secondary">
-        Stop
-      </Button>
+      <Collapse in={!isRunning}>
+        <Button onClick={this.startFocus} variant="raised" color="primary">
+          Focus
+        </Button>
+        <Button onClick={this.startBreak} variant="raised" color="default">
+          Break
+          </Button>
+      </Collapse>
+
     </React.Fragment>
   }
 
