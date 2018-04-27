@@ -17,7 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "doc": "react-doc-creator"
+    "doc": "react-doc-creator",
+    "lint": "eslint src"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",

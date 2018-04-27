@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
-import CssBaseline from 'material-ui/CssBaseline';
+import CssBaseline from 'material-ui/CssBaseline'
 import 'typeface-roboto'
 
 import { App } from './App'
