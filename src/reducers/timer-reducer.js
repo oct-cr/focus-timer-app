@@ -8,9 +8,17 @@ const STATUSES = {
 }
 
 const initialState = {
+  endTimestamp: null,
   remainingSeconds: 0,
   status: STATUSES.STOPPED,
   timerId: null
+}
+
+
+function getTimestampPlusSeconds(seconds) {
+  const date = new Date()
+  date.setSeconds(date.getSeconds() + seconds)
+  return date.getTime()
 }
 
 
@@ -25,6 +33,7 @@ export function timerReducer(state = initialState, action) {
 
       return {
         ...state,
+        endTimestamp: getTimestampPlusSeconds(action.remainingSeconds),
         remainingSeconds: action.remainingSeconds,
         status: STATUSES.BREAK,
         timerId: breakTimerId
@@ -38,6 +47,7 @@ export function timerReducer(state = initialState, action) {
 
       return {
         ...state,
+        endTimestamp: getTimestampPlusSeconds(action.remainingSeconds),
         remainingSeconds: action.remainingSeconds,
         status: STATUSES.FOCUS,
         timerId: focusTimerId
@@ -50,7 +60,8 @@ export function timerReducer(state = initialState, action) {
 
 
     case actionTypes.TIMER_TICK:
-      const remainingSeconds = state.remainingSeconds - 1
+      const now = new Date().getTime()
+      const remainingSeconds = Math.round((state.endTimestamp - now) / 1000)
 
       if (remainingSeconds > 0) {
         return {
