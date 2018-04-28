@@ -44,16 +44,28 @@ export class Dashboard extends React.Component {
       </Collapse>
 
       <Collapse in={isRunning}>
-        <Button onClick={this.stopTimer} variant="raised" color="secondary">
+        <Button
+          className={this.props.classes.stoppedButton}
+          onClick={this.stopTimer}
+          variant="raised"
+        >
           Stop
         </Button>
       </Collapse>
 
       <Collapse in={!isRunning}>
-        <Button onClick={this.startFocus} variant="raised" color="primary">
+        <Button
+          className={this.props.classes.focusButton}
+          onClick={this.startFocus}
+          variant="raised"
+        >
           Focus
         </Button>
-        <Button onClick={this.startBreak} variant="raised" color="default">
+        <Button
+          className={this.props.classes.breakButton}
+          onClick={this.startBreak}
+          variant="raised"
+        >
           Break
           </Button>
       </Collapse>
@@ -65,6 +77,8 @@ export class Dashboard extends React.Component {
 
 
 Dashboard.propTypes = {
+  /** Material UI Classes */
+  classes: PropTypes.object.isRequired,
   /** remaining seconds */
   seconds: PropTypes.number.isRequired
 }

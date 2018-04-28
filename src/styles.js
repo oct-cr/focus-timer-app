@@ -1,0 +1,34 @@
+import indigo from 'material-ui/colors/indigo'
+import purple from 'material-ui/colors/purple'
+import teal from 'material-ui/colors/green'
+
+
+const breakColor = indigo
+const focusColor = teal
+const stoppedColor = purple
+
+
+export default theme => {
+  const getButtonStyle = color => ({
+    backgroundColor: color[600],
+    color: theme.palette.getContrastText(color[600]),
+    '&:hover': {
+      backgroundColor: color[700],
+    }
+  })
+
+  return {
+    break: {
+      backgroundColor: breakColor['A100']
+    },
+    focus: {
+      backgroundColor: focusColor['A200']
+    },
+    stopped: {
+      backgroundColor: stoppedColor['A100']
+    },
+    breakButton: getButtonStyle(breakColor),
+    focusButton: getButtonStyle(focusColor),
+    stoppedButton: getButtonStyle(stoppedColor)
+  }
+}

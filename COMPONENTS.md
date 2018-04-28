@@ -6,6 +6,7 @@ Timer and its controls
 
 Property | Type | Default value | Description
 :--- | :--- | :--- | :---
+`classes`|object|_required_|Material UI Classes
 `seconds`|number|_required_|remaining seconds
 
 <sub>Source: **src/components/Dashboard.js**</sub>

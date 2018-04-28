@@ -1,8 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { withStyles } from 'material-ui/styles'
 
 import { Dashboard, GitHubIcon } from './components'
 import { getFormattedTime } from './utils'
+import styles from './styles'
 
 
 export class App extends React.Component {
@@ -17,13 +19,16 @@ export class App extends React.Component {
   render() {
     this.setDocummentTitle()
 
-    const statusClass = this.props.status.toLowerCase()
+    const statusClass = this.props.classes[this.props.status.toLowerCase()]
 
     return (
       <div id="main-wrapper" className={statusClass}>
         <main>
           <div>
-            <Dashboard seconds={this.props.seconds} />
+            <Dashboard
+              classes={this.props.classes}
+              seconds={this.props.seconds}
+            />
           </div>
         </main>
         <footer>
@@ -44,3 +49,4 @@ const mapStateToProps = state => ({
 })
 
 App = connect(mapStateToProps)(App)
+App = withStyles(styles)(App)
