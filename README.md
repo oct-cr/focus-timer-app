@@ -3,7 +3,7 @@
 Made with:
 + React
 + Redux
-+ Material UI
-+ React Doc Creator
++ [Material UI](https://material-ui-next.com/)
++ [React Doc Creator](https://github.com/crearlink/react-doc-creator)
 
-### [Components Documentation](./COMPONENTS.md)
+The [Components Documentation](./COMPONENTS.md) is generated using React Doc Creator.
