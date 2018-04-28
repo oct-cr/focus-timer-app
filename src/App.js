@@ -8,10 +8,17 @@ import { getFormattedTime } from './utils'
 
 export class App extends React.Component {
 
-  render() {
-    const statusClass = (this.props.seconds === 0) ? 'stopped' : 'running'
+  setDocummentTitle() {
+    const formattedTime = getFormattedTime(this.props.seconds)
 
-    document.title = getFormattedTime(this.props.seconds)
+    document.title = `${formattedTime} ${this.props.status}`
+  }
+
+
+  render() {
+    this.setDocummentTitle()
+
+    const statusClass = this.props.status.toLowerCase()
 
     return (
       <div id="main-wrapper" className={statusClass}>
@@ -33,7 +40,8 @@ export class App extends React.Component {
 
 
 const mapStateToProps = state => ({
-  seconds: state.timer.remainingSeconds
+  seconds: state.timer.remainingSeconds,
+  status: state.timer.status
 })
 
 App = connect(mapStateToProps)(App)

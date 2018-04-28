@@ -43,9 +43,13 @@ footer {
 
 
 .stopped {
-  background: rgba(255, 0, 255, .5);  
+  background: rgb(251, 128, 253);  
 }
 
-.running {
-  background: rgba(0, 255, 255, .5);    
+.focus {
+  background: rgb(138, 252, 197);    
+}
+
+.break {
+  background: rgb(138, 251, 252);    
 }

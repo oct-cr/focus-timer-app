@@ -6,7 +6,7 @@ import Button from 'material-ui/Button'
 import Collapse from 'material-ui/transitions/Collapse'
 
 
-import { start, stop } from '../actions/timer'
+import { startBreak, startFocus, stop } from '../actions/timer'
 
 import { TimerDisplay } from '../components'
 
@@ -23,12 +23,12 @@ export class Dashboard extends React.Component {
 
 
   startFocus() {
-    this.props.start(25 * 60)
+    this.props.startFocus(25 * 60)
   }
 
 
   startBreak() {
-    this.props.start(5 * 60)
+    this.props.startBreak(5 * 60)
   }
 
 
@@ -41,7 +41,10 @@ export class Dashboard extends React.Component {
     const isRunning = this.props.seconds > 0
 
     return <React.Fragment>
-      <TimerDisplay seconds={this.props.seconds} />
+
+      <Collapse in={isRunning}>
+        <TimerDisplay seconds={this.props.seconds} />
+      </Collapse>
 
       <Collapse in={isRunning}>
         <Button onClick={this.stopTimer} variant="raised" color="secondary">
@@ -69,6 +72,6 @@ const mapStateToProps = state => ({
 })
 
 const matchDispatchToProps = dispatch =>
-  bindActionCreators({ start, stop }, dispatch)
+  bindActionCreators({ startBreak, startFocus, stop }, dispatch)
 
 Dashboard = connect(mapStateToProps, matchDispatchToProps)(Dashboard)
