@@ -1,11 +1,5 @@
 # React Components
 
-## App
-
-<sub>Source: **src/App.js**</sub>
-
------
-
 ## TimerDisplay
 
 Displays ```seconds``` using mm:ss format
