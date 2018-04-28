@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { GitHubIcon } from './components'
-import { Dashboard } from './containers'
+import { Dashboard, GitHubIcon } from './components'
 import { getFormattedTime } from './utils'
 
 
@@ -24,7 +23,7 @@ export class App extends React.Component {
       <div id="main-wrapper" className={statusClass}>
         <main>
           <div>
-            <Dashboard />
+            <Dashboard seconds={this.props.seconds} />
           </div>
         </main>
         <footer>

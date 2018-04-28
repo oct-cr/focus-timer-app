@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "doc": "react-doc-creator src -e App.js -i icons",
+    "doc": "react-doc-creator src/components -i icons",
     "lint": "eslint src"
   },
   "devDependencies": {

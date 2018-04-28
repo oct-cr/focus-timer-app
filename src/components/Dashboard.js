@@ -1,14 +1,13 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import PropTypes from 'prop-types'
 
 import Button from 'material-ui/Button'
 import Collapse from 'material-ui/transitions/Collapse'
 
-
-import { startBreak, startFocus, stop } from '../actions/timer'
-
+import * as TimerActions from '../actions/timer'
 import { TimerDisplay } from '../components'
+import store from '../store'
+
 
 /** Timer and its controls */
 export class Dashboard extends React.Component {
@@ -22,18 +21,16 @@ export class Dashboard extends React.Component {
   }
 
 
-  startFocus() {
-    this.props.startFocus(25 * 60)
-  }
-
-
   startBreak() {
-    this.props.startBreak(5 * 60)
+    store.dispatch(TimerActions.startBreak(5 * 60))
   }
 
+  startFocus() {
+    store.dispatch(TimerActions.startFocus(25 * 60))
+  }
 
   stopTimer() {
-    this.props.stop()
+    store.dispatch(TimerActions.stop())
   }
 
 
@@ -67,11 +64,7 @@ export class Dashboard extends React.Component {
 }
 
 
-const mapStateToProps = state => ({
-  seconds: state.timer.remainingSeconds
-})
-
-const matchDispatchToProps = dispatch =>
-  bindActionCreators({ startBreak, startFocus, stop }, dispatch)
-
-Dashboard = connect(mapStateToProps, matchDispatchToProps)(Dashboard)
+Dashboard.propTypes = {
+  /** remaining seconds */
+  seconds: PropTypes.number.isRequired
+}

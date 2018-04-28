@@ -6,15 +6,15 @@ export const actionTypes = {
 }
 
 
-export const tick = () => ({
+const tick = {
   type: actionTypes.TIMER_TICK
-})
+}
 
 
 export const startBreak = remainingSeconds => dispatch => {
   dispatch({
     type: actionTypes.TIMER_START_BREAK,
-    callback: () => dispatch(tick()),
+    callback: () => dispatch(tick),
     remainingSeconds
   })
 }
@@ -23,12 +23,14 @@ export const startBreak = remainingSeconds => dispatch => {
 export const startFocus = remainingSeconds => dispatch => {
   dispatch({
     type: actionTypes.TIMER_START_FOCUS,
-    callback: () => dispatch(tick()),
+    callback: () => dispatch(tick),
     remainingSeconds
   })
 }
 
 
-export const stop = () => ({
-  type: actionTypes.TIMER_STOP
-})
+export const stop = () => dispatch => {
+  dispatch({
+    type: actionTypes.TIMER_STOP
+  })
+}
