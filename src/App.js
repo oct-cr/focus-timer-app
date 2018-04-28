@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Typography from 'material-ui/Typography'
-
+import { GitHubIcon } from './components'
 import { Dashboard } from './containers'
 import { getFormattedTime } from './utils'
 
@@ -22,15 +21,11 @@ export class App extends React.Component {
           </div>
         </main>
         <footer>
-          <Typography variant="body1" gutterBottom>
-            Javascript Web App developed by <a href="https://octaviocoria.com/" target="_blank" rel="noopener noreferrer">
-              Octavio Coria
-          </a> - <a href="https://github.com/crearlink/focus-timer-app" target="_blank" rel="noopener noreferrer">
-              Source Code
+          <a href="https://github.com/crearlink/focus-timer-app" target="_blank" rel="noopener noreferrer">
+            <GitHubIcon />
           </a>
-          </Typography>
         </footer>
-      </div>
+      </div >
     )
   }
 
