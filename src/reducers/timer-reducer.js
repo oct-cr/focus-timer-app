@@ -1,11 +1,7 @@
 import { actionTypes } from '../actions/timer'
 
+import { STATUSES } from '../constants'
 
-const STATUSES = {
-  BREAK: 'BREAK',
-  FOCUS: 'FOCUS',
-  STOPPED: 'STOPPED'
-}
 
 const initialState = {
   endTimestamp: null,

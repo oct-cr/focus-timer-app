@@ -28,6 +28,7 @@ export class App extends React.Component {
             <Dashboard
               classes={this.props.classes}
               seconds={this.props.seconds}
+              status={this.props.status}
             />
           </div>
         </main>

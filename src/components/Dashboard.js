@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 
 import Button from 'material-ui/Button'
 import Collapse from 'material-ui/transitions/Collapse'
+import Typography from 'material-ui/Typography'
 
 import * as TimerActions from '../actions/timer'
 import { StopIcon, TimerDisplay } from '../components'
+import { STATUSES } from '../constants'
 import store from '../store'
 
 
@@ -44,6 +46,16 @@ export class Dashboard extends React.Component {
     }
 
     return <React.Fragment>
+
+      {
+        Object.values(STATUSES).map(status => (
+          <Collapse in={status === this.props.status}>
+            <Typography variant="display3" gutterBottom>
+              {status}
+            </Typography>
+          </Collapse>
+        ))
+      }
 
       <Collapse in={isRunning}>
         <TimerDisplay seconds={this.timeToDisplay} />
@@ -88,5 +100,7 @@ Dashboard.propTypes = {
   /** Material UI Classes */
   classes: PropTypes.object.isRequired,
   /** remaining seconds */
-  seconds: PropTypes.number.isRequired
+  seconds: PropTypes.number.isRequired,
+  /** Timer Status */
+  status: PropTypes.string.isRequired
 }
