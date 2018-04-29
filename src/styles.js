@@ -29,6 +29,15 @@ export default theme => {
     },
     breakButton: getButtonStyle(breakColor),
     focusButton: getButtonStyle(focusColor),
-    stoppedButton: getButtonStyle(stoppedColor)
+    stoppedButton: {
+      background: 'none',
+      border: '.2rem solid',
+      borderColor: stoppedColor[600],
+      color: stoppedColor[600],
+      opacity: .8,
+      '&:hover': {
+        background: 'none'
+      }
+    }
   }
 }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import Button from 'material-ui/Button'
 import Collapse from 'material-ui/transitions/Collapse'
+import IconButton from 'material-ui/IconButton'
 import Typography from 'material-ui/Typography'
 
 import * as TimerActions from '../actions/timer'
@@ -62,13 +63,12 @@ export class Dashboard extends React.Component {
       </Collapse>
 
       <Collapse in={isRunning}>
-        <Button
+        <IconButton
           className={this.props.classes.stoppedButton}
           onClick={this.stopTimer}
-          variant="fab"
         >
           <StopIcon />
-        </Button>
+        </IconButton>
       </Collapse>
 
       <Collapse in={!isRunning}>
