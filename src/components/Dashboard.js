@@ -15,6 +15,8 @@ export class Dashboard extends React.Component {
   constructor(props) {
     super(props)
 
+    this.timeToDisplay = null
+
     this.startFocus = this.startFocus.bind(this)
     this.startBreak = this.startBreak.bind(this)
     this.stopTimer = this.stopTimer.bind(this)
@@ -37,10 +39,14 @@ export class Dashboard extends React.Component {
   render() {
     const isRunning = this.props.seconds > 0
 
+    if (isRunning) {
+      this.timeToDisplay = this.props.seconds
+    }
+
     return <React.Fragment>
 
       <Collapse in={isRunning}>
-        <TimerDisplay seconds={this.props.seconds} />
+        <TimerDisplay seconds={this.timeToDisplay} />
       </Collapse>
 
       <Collapse in={isRunning}>
