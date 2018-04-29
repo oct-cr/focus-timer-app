@@ -18,7 +18,7 @@ export class Dashboard extends React.Component {
   constructor(props) {
     super(props)
 
-    this.timeToDisplay = null
+    this.timeToDisplay = 0
 
     this.startFocus = this.startFocus.bind(this)
     this.startBreak = this.startBreak.bind(this)
@@ -50,7 +50,7 @@ export class Dashboard extends React.Component {
 
       {
         Object.values(STATUSES).map(status => (
-          <Collapse in={status === this.props.status}>
+          <Collapse in={status === this.props.status} key={status}>
             <Typography variant="display3" gutterBottom>
               {status}
             </Typography>
