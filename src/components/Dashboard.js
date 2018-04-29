@@ -5,7 +5,7 @@ import Button from 'material-ui/Button'
 import Collapse from 'material-ui/transitions/Collapse'
 
 import * as TimerActions from '../actions/timer'
-import { TimerDisplay } from '../components'
+import { StopIcon, TimerDisplay } from '../components'
 import store from '../store'
 
 
@@ -47,9 +47,9 @@ export class Dashboard extends React.Component {
         <Button
           className={this.props.classes.stoppedButton}
           onClick={this.stopTimer}
-          variant="raised"
+          variant="fab"
         >
-          Stop
+          <StopIcon />
         </Button>
       </Collapse>
 
@@ -57,6 +57,7 @@ export class Dashboard extends React.Component {
         <Button
           className={this.props.classes.focusButton}
           onClick={this.startFocus}
+          size="large"
           variant="raised"
         >
           Focus
@@ -64,6 +65,7 @@ export class Dashboard extends React.Component {
         <Button
           className={this.props.classes.breakButton}
           onClick={this.startBreak}
+          size="large"
           variant="raised"
         >
           Break
