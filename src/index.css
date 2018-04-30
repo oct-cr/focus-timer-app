@@ -11,7 +11,7 @@ body {
 
 #main-wrapper {  
   display: grid;
-  grid-template-areas: "nav" "main" "footer";
+  grid-template-areas: "header" "main" "footer";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   height: 100%;
@@ -20,7 +20,10 @@ body {
 }
 
 header {
-  grid-area: nav;
+  display: flex;
+  grid-area: header;
+  justify-content: flex-end;
+  padding: .5rem;
 }
 
 main {

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withStyles } from 'material-ui/styles'
 
-import { Dashboard, GitHubIcon } from './components'
+import { Dashboard, GitHubIcon, NotificationIcon } from './components'
 import { getFormattedTime } from './utils'
 import styles from './styles'
 
@@ -23,6 +23,9 @@ export class App extends React.Component {
 
     return (
       <div id="main-wrapper" className={statusClass}>
+        <header>
+          <NotificationIcon />
+        </header>
         <main>
           <div>
             <Dashboard
