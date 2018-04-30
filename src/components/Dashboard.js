@@ -4,10 +4,11 @@ import PropTypes from 'prop-types'
 import Button from 'material-ui/Button'
 import Collapse from 'material-ui/transitions/Collapse'
 import IconButton from 'material-ui/IconButton'
+import StopIcon from '@material-ui/icons/Stop'
 import Typography from 'material-ui/Typography'
 
 import * as TimerActions from '../actions/timer'
-import { StopIcon, TimerDisplay } from '../components'
+import { TimerDisplay } from '../components'
 import { STATUSES } from '../constants'
 import store from '../store'
 
