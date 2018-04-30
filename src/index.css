@@ -23,7 +23,6 @@ header {
   display: flex;
   grid-area: header;
   justify-content: flex-end;
-  padding: .5rem;
 }
 
 main {

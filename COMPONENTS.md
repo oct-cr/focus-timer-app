@@ -14,6 +14,14 @@ Property | Type | Default value | Description
 
 -----
 
+## NotificationControl
+
+Shows and controls Notification Status
+
+<sub>Source: **src/components/NotificationControl.js**</sub>
+
+-----
+
 ## TimerDisplay
 
 Displays ```seconds``` using mm:ss format
