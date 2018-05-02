@@ -24,7 +24,9 @@ export class App extends React.Component {
     return (
       <div id="main-wrapper" className={statusClass}>
         <header>
-          <NotificationControl />
+          <NotificationControl
+            lastBlockStatus={this.props.lastBlockStatus}
+          />
         </header>
         <main>
           <div>
@@ -48,6 +50,7 @@ export class App extends React.Component {
 
 
 const mapStateToProps = state => ({
+  lastBlockStatus: state.timer.lastBlockStatus,
   seconds: state.timer.remainingSeconds,
   status: state.timer.status
 })

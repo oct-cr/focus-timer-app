@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import IconButton from 'material-ui/IconButton'
 
@@ -24,8 +25,19 @@ export class NotificationControl extends React.Component {
     }
 
     this.handleToggleStatus = this.handleToggleStatus.bind(this)
-
   }
+
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.lastBlockStatus === null
+      || (this.props.lastBlockStatus === prevProps.lastBlockStatus)
+      || (this.state.status !== NOTIFICATION_STATUS.ENABLED)) {
+      return
+    }
+
+    this.dispatchNotification(`${this.props.lastBlockStatus} FINISHED`)
+  }
+
 
   handleToggleStatus() {
     const { status } = this.state
@@ -51,6 +63,14 @@ export class NotificationControl extends React.Component {
   }
 
 
+  dispatchNotification(title) {
+    new Notification(title, {
+      requireInteraction: true,
+      vibrate: [200]
+    })
+  }
+
+
   render() {
 
     if (!('Notification' in window)) {
@@ -64,4 +84,9 @@ export class NotificationControl extends React.Component {
     )
   }
 
+}
+
+
+NotificationControl.propTypes = {
+  lastBlockStatus: PropTypes.string
 }

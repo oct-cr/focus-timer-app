@@ -18,6 +18,10 @@ Property | Type | Default value | Description
 
 Shows and controls Notification Status
 
+Property | Type | Default value | Description
+:--- | :--- | :--- | :---
+`lastBlockStatus`|string||
+
 <sub>Source: **src/components/NotificationControl.js**</sub>
 
 -----
