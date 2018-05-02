@@ -5,6 +5,7 @@ import { STATUSES } from '../constants'
 
 const initialState = {
   endTimestamp: null,
+  lastBlockStatus: null,
   remainingSeconds: 0,
   status: STATUSES.STOPPED,
   timerId: null
@@ -28,7 +29,7 @@ export function timerReducer(state = initialState, action) {
       const breakTimerId = setInterval(action.callback, 1000)
 
       return {
-        ...state,
+        ...initialState,
         endTimestamp: getTimestampPlusSeconds(action.remainingSeconds),
         remainingSeconds: action.remainingSeconds,
         status: STATUSES.BREAK,
@@ -42,7 +43,7 @@ export function timerReducer(state = initialState, action) {
       const focusTimerId = setInterval(action.callback, 1000)
 
       return {
-        ...state,
+        ...initialState,
         endTimestamp: getTimestampPlusSeconds(action.remainingSeconds),
         remainingSeconds: action.remainingSeconds,
         status: STATUSES.FOCUS,
@@ -67,7 +68,10 @@ export function timerReducer(state = initialState, action) {
       }
 
       clearInterval(state.timerId)
-      return initialState
+      return {
+        ...initialState,
+        lastBlockStatus: state.status
+      }
 
 
     default:
