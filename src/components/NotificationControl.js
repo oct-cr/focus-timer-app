@@ -65,6 +65,7 @@ export class NotificationControl extends React.Component {
 
   dispatchNotification(title) {
     new Notification(title, {
+      icon: '/favicon.png',
       requireInteraction: true,
       vibrate: [200]
     })
