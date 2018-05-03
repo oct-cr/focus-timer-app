@@ -1,4 +1,5 @@
 export * from './icons'
+export * from './AlarmControl'
 export * from './Dashboard'
-export * from './TimerDisplay'
 export * from './NotificationControl'
+export * from './TimerDisplay'

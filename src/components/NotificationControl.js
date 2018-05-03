@@ -28,7 +28,7 @@ export class NotificationControl extends React.Component {
   }
 
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(prevProps) {
     if (this.props.lastBlockStatus === null
       || (this.props.lastBlockStatus === prevProps.lastBlockStatus)
       || (this.state.status !== NOTIFICATION_STATUS.ENABLED)) {

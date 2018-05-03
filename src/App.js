@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { withStyles } from 'material-ui/styles'
 
-import { Dashboard, GitHubIcon, NotificationControl } from './components'
+import { AlarmControl, Dashboard, GitHubIcon, NotificationControl } from './components'
 import { getFormattedTime } from './utils'
 import styles from './styles'
 
@@ -25,6 +25,9 @@ export class App extends React.Component {
       <div id="main-wrapper" className={statusClass}>
         <header>
           <NotificationControl
+            lastBlockStatus={this.props.lastBlockStatus}
+          />
+          <AlarmControl
             lastBlockStatus={this.props.lastBlockStatus}
           />
         </header>

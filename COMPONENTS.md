@@ -1,5 +1,17 @@
 # React Components
 
+## AlarmControl
+
+Shows alarm sound control and plays the sound
+
+Property | Type | Default value | Description
+:--- | :--- | :--- | :---
+`lastBlockStatus`|string||
+
+<sub>Source: **src/components/AlarmControl.js**</sub>
+
+-----
+
 ## Dashboard
 
 Timer and its controls
