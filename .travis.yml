@@ -7,7 +7,6 @@ cache:
 script:
   - npm test
   - npm run build
-after_success: 
-  - curl --ftp-create-dirs 
-        -T ./build/
-        ftp://${SFTP_USER}:${SFTP_PASSWORD}@crearlink.com/ 
+after_success:
+  - cd build
+  - find . -type f -exec curl --ftp-create-dirs -T {} --user ${FTP_USER}:{FTP_PASSWORD} ftp://{FTP_HOST}/{} \;
