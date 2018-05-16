@@ -8,8 +8,6 @@ script:
   - npm test
   - npm run build
 after_success: 
-  - echo "${SFTP_KEY}" | base64 --decode >/tmp/sftp_rsa 
   - curl --ftp-create-dirs 
         -T ./build/
-        --key /tmp/sftp_rsa 
-        sftp://${SFTP_USER}:${SFTP_PASSWORD}@crearlink.com/ 
+        ftp://${SFTP_USER}:${SFTP_PASSWORD}@crearlink.com/ 
