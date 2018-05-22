@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
+import 'core-js/fn/object/values'
+
 import CssBaseline from '@material-ui/core/CssBaseline'
 import 'typeface-roboto'
 
