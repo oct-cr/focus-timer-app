@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { withStyles } from 'material-ui/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 import { AlarmControl, Dashboard, GitHubIcon, NotificationControl } from './components'
 import { getFormattedTime } from './utils'
