@@ -2,7 +2,7 @@ import React from 'react'
 import Sound from 'react-sound'
 import PropTypes from 'prop-types'
 
-import IconButton from 'material-ui/IconButton'
+import IconButton from '@material-ui/core/IconButton'
 
 import { AlarmIcon } from './icons'
 
