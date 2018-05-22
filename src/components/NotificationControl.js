@@ -21,7 +21,7 @@ export class NotificationControl extends React.Component {
     super(props)
 
     this.state = {
-      status: notificationStatusMap[Notification.permission]
+      status: ('Notification' in window) && notificationStatusMap[Notification.permission]
     }
 
     this.handleToggleStatus = this.handleToggleStatus.bind(this)
