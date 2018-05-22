@@ -10,10 +10,6 @@ body {
 }
 
 #main-wrapper {  
-  display: grid;
-  grid-template-areas: "header" "main" "footer";
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
   height: 100%;
   transition: background-color .225s cubic-bezier(.4, 0, 1, 1);
   width: 100%;
@@ -21,19 +17,21 @@ body {
 
 header {
   display: flex;
-  grid-area: header;
+  height: 15%;
   justify-content: flex-end;
 }
 
 main {
   align-items: center;
   display: flex;
-  grid-area: main;
+  height: 70%;
   justify-content: center;
   text-align: center;
 }
 
 footer {
-  grid-area: footer;
+  align-items: flex-end;
+  display: flex;
+  height: 15%;
   padding: .5rem;
 }
