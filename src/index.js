@@ -7,6 +7,8 @@ import 'core-js/fn/object/values'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import 'typeface-roboto'
 
+import registerServiceWorker from './registerServiceWorker'
+
 import { App } from './App'
 import store from './store'
 
@@ -22,3 +24,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
+
+registerServiceWorker()
