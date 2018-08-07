@@ -2,8 +2,8 @@ export const getFormattedTime = seconds => {
   const minutes = Math.floor(seconds / 60)
   const remainingSeconds = seconds % 60
 
-  const paddedMinutes = String(minutes).padStart(2, '0')
-  const paddedSeconds = String(remainingSeconds).padStart(2, '0')
+  const paddedMinutes = `0${minutes}`.substr(-2)
+  const paddedSeconds = `0${remainingSeconds}`.substr(-2)
 
   return `${paddedMinutes}:${paddedSeconds}`
 }

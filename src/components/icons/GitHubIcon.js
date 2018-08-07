@@ -1,7 +1,7 @@
 import React from 'react'
 
-import SvgIcon from 'material-ui/SvgIcon'
-import Tooltip from 'material-ui/Tooltip'
+import SvgIcon from '@material-ui/core/SvgIcon'
+import Tooltip from '@material-ui/core/Tooltip'
 
 
 export const GitHubIcon = props => (

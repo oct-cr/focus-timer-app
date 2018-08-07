@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Button from 'material-ui/Button'
-import Collapse from 'material-ui/transitions/Collapse'
-import IconButton from 'material-ui/IconButton'
+import Button from '@material-ui/core/Button'
+import Collapse from '@material-ui/core/Collapse'
+import IconButton from '@material-ui/core/IconButton'
 import StopIcon from '@material-ui/icons/Stop'
-import Typography from 'material-ui/Typography'
+import Typography from '@material-ui/core/Typography'
 
 import * as TimerActions from '../actions/timer'
 import { TimerDisplay } from '../components'

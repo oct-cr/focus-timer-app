@@ -1,6 +1,6 @@
-import indigo from 'material-ui/colors/indigo'
-import purple from 'material-ui/colors/purple'
-import teal from 'material-ui/colors/green'
+import indigo from '@material-ui/core/colors/indigo'
+import purple from '@material-ui/core/colors/purple'
+import teal from '@material-ui/core/colors/green'
 
 
 const breakColor = indigo

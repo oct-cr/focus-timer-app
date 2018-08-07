@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import IconButton from 'material-ui/IconButton'
+import IconButton from '@material-ui/core/IconButton'
 
 import { NotificationIcon } from './icons'
 import { NOTIFICATION_STATUS } from '../constants'
@@ -21,7 +21,7 @@ export class NotificationControl extends React.Component {
     super(props)
 
     this.state = {
-      status: notificationStatusMap[Notification.permission]
+      status: ('Notification' in window) && notificationStatusMap[Notification.permission]
     }
 
     this.handleToggleStatus = this.handleToggleStatus.bind(this)
