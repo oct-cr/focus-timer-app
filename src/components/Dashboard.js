@@ -65,7 +65,7 @@ export class Dashboard extends React.Component {
 
       <Collapse in={isRunning}>
         <IconButton
-          className={this.props.classes.stoppedButton}
+          className={this.props.classes.stopButton}
           onClick={this.stopTimer}
         >
           <StopIcon />
