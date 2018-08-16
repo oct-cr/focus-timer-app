@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { withStyles } from '@material-ui/core/styles'
+import IconButton from '@material-ui/core/IconButton'
+
 
 import { AlarmControl, Dashboard, GitHubIcon, NotificationControl } from './components'
 import { getFormattedTime } from './utils'
@@ -42,7 +44,9 @@ export class App extends React.Component {
         </main>
         <footer>
           <a href="https://github.com/crearlink/focus-timer-app" target="_blank" rel="noopener noreferrer">
-            <GitHubIcon />
+            <IconButton>
+              <GitHubIcon />
+            </IconButton>
           </a>
         </footer>
       </div >

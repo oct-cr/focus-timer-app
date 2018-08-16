@@ -9,6 +9,7 @@ const stoppedColor = purple
 
 
 export default theme => {
+
   const getButtonStyle = color => ({
     backgroundColor: color[600],
     color: theme.palette.getContrastText(color[600]),
@@ -16,6 +17,7 @@ export default theme => {
       backgroundColor: color[700],
     }
   })
+
 
   return {
     break: {
@@ -29,15 +31,23 @@ export default theme => {
     },
     breakButton: getButtonStyle(breakColor),
     focusButton: getButtonStyle(focusColor),
-    stoppedButton: {
+    stopButton: {
       background: 'none',
       border: '.2rem solid',
-      borderColor: stoppedColor[600],
-      color: stoppedColor[600],
-      opacity: .8,
+      borderColor: stoppedColor[900],
+      color: stoppedColor[900],
+      opacity: .5,
+      transition: theme.transitions.create(
+        ['border-color', 'color', 'opacity'],
+        { duration: theme.transitions.duration.complex }
+      ),
       '&:hover': {
-        background: 'none'
+        background: 'none',
+        borderColor: stoppedColor[600],
+        color: stoppedColor[600],
+        opacity: 1
       }
     }
   }
+
 }
