@@ -1,7 +1,21 @@
 {
   "name": "focus-timer-app",
-  "version": "0.0.1",
   "private": true,
+  "author": "Octavio Coria",
+  "version": "0.0.1",
+  "description": "Countdown timer to work using the Pomodoro Technique®",
+  "keywords": [
+    "react",
+    "material-ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crearlink/focus-timer-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crearlink/focus-timer-app/issues"
+  },
+  "homepage": "https://focustimer.crearlink.com/",
   "dependencies": {
     "@material-ui/core": "1.5.1",
     "@material-ui/icons": "2.0.3",
