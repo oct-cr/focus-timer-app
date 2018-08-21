@@ -1,10 +1,24 @@
 {
   "name": "focus-timer-app",
-  "version": "0.0.1",
   "private": true,
+  "author": "Octavio Coria",
+  "version": "0.0.1",
+  "description": "Countdown timer to work using the Pomodoro Technique®",
+  "keywords": [
+    "react",
+    "material-ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crearlink/focus-timer-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crearlink/focus-timer-app/issues"
+  },
+  "homepage": "https://focustimer.crearlink.com/",
   "dependencies": {
-    "@material-ui/core": "1.4.3",
-    "@material-ui/icons": "2.0.1",
+    "@material-ui/core": "1.5.1",
+    "@material-ui/icons": "2.0.3",
     "core-js": "^2.5.6",
     "react": "16.4.2",
     "react-dom": "16.4.2",
@@ -24,13 +38,13 @@
     "lint": "eslint src"
   },
   "devDependencies": {
-    "babel-eslint": "8.2.6",
-    "eslint": "4.19.1",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.1.1",
     "eslint-config-react-app": "2.1.0",
     "eslint-plugin-flowtype": "2.50.0",
-    "eslint-plugin-import": "2.13.0",
-    "eslint-plugin-jsx-a11y": "6",
-    "eslint-plugin-react": "7.10.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "7.11.1",
     "react-doc-creator": "0.0.8"
   }
 }
