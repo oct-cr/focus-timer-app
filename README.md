@@ -1,6 +1,6 @@
 # Focus Timer Web App
 
-![Build](https://img.shields.io/travis/crearlink/focus-timer-app/master.svg?style=popout-square)
+[![Travis (.org)](https://img.shields.io/travis/crearlink/focus-timer-app/master.svg?style=popout-square)](https://travis-ci.org/crearlink/focus-timer-app/builds)
 
 ### [Live Demo](https://focustimer.crearlink.com/)
 
