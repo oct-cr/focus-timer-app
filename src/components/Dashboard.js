@@ -77,7 +77,7 @@ export class Dashboard extends React.Component {
           className={this.props.classes.focusButton}
           onClick={this.startFocus}
           size="large"
-          variant="raised"
+          variant="contained"
         >
           Focus
         </Button>
@@ -85,7 +85,7 @@ export class Dashboard extends React.Component {
           className={this.props.classes.breakButton}
           onClick={this.startBreak}
           size="large"
-          variant="raised"
+          variant="contained"
         >
           Break
           </Button>

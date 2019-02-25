@@ -2,7 +2,7 @@
   "name": "focus-timer-app",
   "private": true,
   "author": "Octavio Coria",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Countdown timer to work using the Pomodoro Technique®",
   "keywords": [
     "react",
@@ -17,34 +17,40 @@
   },
   "homepage": "https://focustimer.crearlink.com/",
   "dependencies": {
-    "@material-ui/core": "1.5.1",
-    "@material-ui/icons": "2.0.3",
-    "core-js": "^2.5.6",
-    "react": "16.4.2",
-    "react-dom": "16.4.2",
-    "react-redux": "5.0.7",
-    "react-scripts": "1.1.4",
+    "@material-ui/core": "3.9.2",
+    "@material-ui/icons": "3.0.2",
+    "core-js": "2.6.5",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
+    "react-redux": "6.0.1",
+    "react-scripts": "2.1.5",
     "react-sound": "1.2.0",
-    "redux": "4.0.0",
+    "redux": "4.0.1",
     "redux-thunk": "2.3.0",
     "typeface-roboto": "0.0.54"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:doc": "react-doc-creator src/components -i icons",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "doc": "react-doc-creator src/components -i icons",
     "lint": "eslint src"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.1.1",
-    "eslint-config-react-app": "2.1.0",
-    "eslint-plugin-flowtype": "2.50.0",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "7.11.1",
-    "react-doc-creator": "0.0.8"
-  }
+    "eslint": "5.12.0",
+    "eslint-config-react-app": "3.0.7",
+    "eslint-plugin-flowtype": "~2",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "7.12.4",
+    "react-doc-creator": "0.0.9",
+    "typescript": "^3.3"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
