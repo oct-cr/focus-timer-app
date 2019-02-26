@@ -43,8 +43,12 @@ export class App extends React.Component {
           </div>
         </main>
         <footer>
-          <a href="https://github.com/crearlink/focus-timer-app" target="_blank" rel="noopener noreferrer">
-            <IconButton>
+          <a href="https://github.com/crearlink/focus-timer-app"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Repository"
+          >
+            <IconButton aria-label="GitHub Repository">
               <GitHubIcon />
             </IconButton>
           </a>

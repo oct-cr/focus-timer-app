@@ -67,6 +67,7 @@ export class Dashboard extends React.Component {
         <IconButton
           className={this.props.classes.stopButton}
           onClick={this.stopTimer}
+          aria-label="Stop"
         >
           <StopIcon />
         </IconButton>

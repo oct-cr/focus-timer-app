@@ -1,0 +1,5 @@
+Header set Cache-Control "max-age=31536000, public"
+
+RewriteEngine On 
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://focustimer.crearlink.com/$1 [L,R=301]
