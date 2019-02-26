@@ -79,7 +79,10 @@ export class NotificationControl extends React.Component {
     }
 
     return (
-      <IconButton onClick={this.handleToggleStatus}>
+      <IconButton
+        onClick={this.handleToggleStatus}
+        aria-label="Toggle Notifications"
+      >
         <NotificationIcon status={this.state.status} />
       </IconButton>
     )

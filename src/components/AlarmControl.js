@@ -49,7 +49,9 @@ export class AlarmControl extends React.Component {
           url="alarm.mp3"
           playStatus={playStatus}
         />
-        <IconButton onClick={this.handleToggleStatus}>
+        <IconButton
+          onClick={this.handleToggleStatus}
+          aria-label="Toggle alarm sound">
           <AlarmIcon status={this.state.status} />
         </IconButton>
       </React.Fragment>
