@@ -63,8 +63,15 @@ export class NotificationControl extends React.Component {
   }
 
 
-  dispatchNotification(title) {
-    new Notification(title, {
+  async dispatchNotification(title) {
+    const serviceWorkerRegistration = await navigator.serviceWorker.getRegistration()
+
+    if (!serviceWorkerRegistration) {
+      console.warn('No Service Worker registered')
+      return
+    }
+
+    serviceWorkerRegistration.showNotification(title, {
       icon: '/favicon.png',
       requireInteraction: true,
       vibrate: [200]

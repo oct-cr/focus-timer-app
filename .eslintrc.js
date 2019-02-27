@@ -16,7 +16,12 @@ module.exports = {
     "sourceType": "module"
   },
   "rules": {
-    "no-console": "warn",
+    "no-console": [
+      "error",
+      {
+        allow: ["error", "info", "warn"]
+      }
+    ],
     "block-scoped-var": "warn",
     "curly": "warn",
     "no-else-return": "warn",
