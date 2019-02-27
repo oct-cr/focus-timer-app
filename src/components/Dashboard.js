@@ -24,6 +24,8 @@ export class Dashboard extends React.Component {
     this.startFocus = this.startFocus.bind(this)
     this.startBreak = this.startBreak.bind(this)
     this.stopTimer = this.stopTimer.bind(this)
+
+    this.startTest = this.startTest.bind(this)
   }
 
 
@@ -37,6 +39,11 @@ export class Dashboard extends React.Component {
 
   stopTimer() {
     store.dispatch(TimerActions.stop())
+  }
+
+
+  startTest() {
+    store.dispatch(TimerActions.startFocus(1))
   }
 
 
@@ -90,6 +97,16 @@ export class Dashboard extends React.Component {
         >
           Break
           </Button>
+
+        {document.location.search === '?showTestButton' &&
+          <Button
+            onClick={this.startTest}
+            size="large"
+          >
+            Test
+        </Button>
+        }
+
       </Collapse>
 
     </React.Fragment>
